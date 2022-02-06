@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: rgba(240, 240, 240, 0.885);
+}
+
+/* //////  header  //////// */
+.list-option {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ///////  body /////// */
+
+.category {
+    padding: 10px;
+    color: #f8bf2e;
+    margin-top: 20px;
+}
+
+.content-post {
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px 0 40px;
+    border-radius: 10px;
+}
+
+.list-segment {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.segment {
+    margin-bottom: 20px;
+}
+
+.segment p {
+    text-indent: 50px;
+    white-space: pre-line;
+}
+
+.media-segment {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.media-segment img {
+    max-width: 700px;
+    height: auto;
+}
+
+.list-link {
+    margin-top: 20px;
+}
+
+.tag {
+    margin-top: 40px;
+}
+
+.tag h6 {
+    display: inline;
+}
+
+/* another post */
+
+.post-other {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.list-post {
+    margin: 20px 0;
+}
+
+.list-post a {
+    color: rgb(39, 39, 39);
+}
+
+.list-post a:hover {
+    text-decoration: none;
+}
+
+.post {
+    height: 170px;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #eefa9e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+}
+
+.post:hover {
+    border: solid 1px #04f80d;
+    z-index: 1px;
+    transition: all 0.5s step-start;
+}
+
+.image {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    height: 150px;
+    width: auto;
+    max-width: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.content {
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.title h5 {
+    font-size: 22px;
+}
+
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.post p {
+    margin: 0;
+}
+
+.link h6 {
+    display: inline;
+}
+
+.link a {
+    color: red;
+}
+
+.link a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+/* ///////  footer  ////// */
+.footer {
+    background-color: rgb(31, 27, 27);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 5%;
+}
+
+.footer-link ul {
+    list-style-type: none;
+}
+
+.follow-me a {
+    transition: all 0.2s ease-in-out;
+}
+
+.follow-me a:hover {
+    color: #ff5858;
+    text-decoration: none;
+}
+
+.footer p {
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .media-segment img {
+        max-width: 500px;
+    }
+
+    .post {
+        height: 140px;
+    }
+    .image {
+        width: 420px;
+    }
+    .image img {
+        height: 120px;
+        width: auto;
+        max-width: 200px;
+    }
+
+    .title h5 {
+        font-size: 22px;
+    }
+
+    .description {
+        -webkit-line-clamp: 2; /* number of lines to show */
+    }
+
+    .description p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .media-segment img {
+        max-width: 300px;
+    }
+
+    .link h6 {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .post {
+        height: 100px;
+        margin: 5px 0;
+    }
+    .image {
+        width: 350px;
+    }
+    .image img {
+        height: 80px;
+        width: auto;
+        max-width: 120px;
+    }
+
+    .title h5 {
+        font-size: 18px;
+    }
+
+    .description {
+        -webkit-line-clamp: 2; /* number of lines to show */
+    }
+
+    .description p {
+        font-size: 15px;
+        line-height: 15px;
+    }
+}

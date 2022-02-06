@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%- title %></title>
+        <link
+            rel="icon"
+            href="/image/logo2.png"
+        />
+        <link rel="stylesheet" href="/css/postStyle.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="body">
+        <%- include('./partials/header.ejs') %>
+
+        <div class="container">
+            <div class="category">
+                <h4><%- post.category %></h4>
+            </div>
+
+            <div class="content-post">
+                <div class="title-post">
+                    <h4><%- title %></h4>
+                </div>
+                <div class="list-segment">
+
+                    <% for(let i=0; i<post.type.length; i++) { %>
+                        
+                        <div class="segment">
+                        <% if(post.type[i] == 'text') { %>
+
+                                <p><%- post.value[i] %></p>
+                                
+                        <% } else { %>
+
+                            <div class="media-segment">
+                                <img src="<%- post.value[i] %>" alt="" />
+                            </div>
+
+                        <% } %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="list-link">
+                    <% for(let i=0; i<post.titleLink.length; i++) { %>
+
+                        <div class="link">
+                            <h6><%- post.titleLink[i] %> :</h6>
+                            <a href="/shorten/<%- post.valueLink[i] %>"><%- post.keyLink[i] %></a>
+                        </div>
+
+                    <% } %>
+                </div>
+
+                <div class="tag">
+                    <h6>Tag :</h6>
+                    <p>
+                        Nro lậu, nrolau.com, nrolau, ngọc rồng lậu, ngọc rồng
+                        online, sositech.xyz
+                    </p>
+                </div>
+            </div>
+
+            <div class="post-other">
+                <h5>Các bài viết tương tự ></h5>
+                <div class="list-post">
+                    
+                    <% for(let i=0;i<similarPost.length;i++) { %>
+
+                        <a href="/post/<%- similarPost[i].title.split(' ').join('-') %>.<%- similarPost[i]._id %>">
+                            <div class="post">
+                                <div class="image">
+                                    <img src="<%- similarPost[i].background%>" alt="" />
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        <h5><%- similarPost[i].title %></h5>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <%- similarPost[i].value[0] %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thêm bài viết</title>
+        <link rel="stylesheet" href="/css/addPostStyle.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="body">
+        <div class="container">
+            <div class="title">
+                <h1>ADMIN</h1>
+                <h3>Thêm bài viết</h3>
+            </div>
+
+            <form name="form-data" method="post">
+                <div class="post" id="post">
+                    <div class="title-avatar">
+                        <h6>Title :</h6>
+                        <textarea name="title" id="title"></textarea>
+                        <h6>Background mini (avatar)</h6>
+                        <input type="text" name="background" />
+                    </div>
+
+                    <div class="segment">
+                        <div class="type">
+                            <h6>Select :</h6>
+                            <select name="type" id="type">
+                                <option value="text">Text</option>
+                                <option value="image">Image</option>
+                            </select>
+                        </div>
+                        <div class="value">
+                            <textarea name="value" id="value"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <div class="tag">
+                        <h6>Tag :</h6>
+                        <textarea name="tag"></textarea>
+                    </div>
+
+                    <div class="category">
+                        <h6>Category</h6>
+                        <select
+                            name="category"
+                            id="category"
+                            style="
+                                width: 50%;
+                                margin-bottom: 20px;
+                                text-align: center;
+                            "
+                        >
+                            <option value="thu thuat">Thủ thuật</option>
+                            <option value="ung dung">Ứng dụng</option>
+                            <option value="game">Game</option>
+                            <option value="kiem tien online">
+                                Kiếm tiền online
+                            </option>
+                        </select>
+                    </div>
+
+                    <h6>
+                        Các liên kết trong bài viết (Title link - Key link -
+                        Value link) :
+                    </h6>
+                    <div class="link">
+                        <input
+                            type="text"
+                            name="titleLink"
+                            placeholder="Title link"
+                        />
+                        <input
+                            type="text"
+                            name="keyLink"
+                            placeholder="Key link"
+                        />
+                        <input
+                            type="text"
+                            name="valueLink"
+                            placeholder="Value link"
+                        />
+                    </div>
+                </div>
+            </form>
+            <div class="option">
+                <h6>Các chức năng :</h6>
+                <div class="row">
+                    <div class="col-4">
+                        <button id="add-segment" class="btn btn-success">
+                            Thêm Segment bài viết
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button id="add-link" class="btn btn-success">
+                            Thêm Link bài viết
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button id="preview" class="btn btn-success">
+                            Xem trước bài viết
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button id="save-post" class="btn btn-success">
+                            Lưu bài viết
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/addPostScript.js"></script>
+    </body>
+</html>

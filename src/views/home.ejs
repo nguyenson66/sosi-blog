@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Chào mừng bạn đến với blog Sositech.xyz nơi chia sẻ thủ thuật, ứng
+            dụng và game hay
+        </title>
+
+        <link
+            rel="icon"
+            href="/image/logo2.png"
+        />
+
+        <link rel="stylesheet" href="/css/homeStyle.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="body">
+        <%- include('./partials/header.ejs') %>
+
+        <div class="container">
+            <div class="notification">
+                <h5>Thông báo :</h5>
+                <p>Chào mừng các bạn đến với trang web sositech.xyz</p>
+            </div>
+
+            <div class="frames">
+                <div class="title-list-post">
+                    <h6>Bài viết thịnh hành</h6>
+                    <a href="/thinh-hanh">Xem tất cả></a>
+                </div>
+                <div class="list-post">
+                    <div class="wrapper">
+                        <% for(let i=0;i<trendingPost.length;i++) { %>
+
+                            <a href="/post/<%- trendingPost[i].title.split(' ').join('-') %>.<%- trendingPost[i]._id %>">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="<%- trendingPost[i].background %>" alt="" />
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">
+                                            <h6><%- trendingPost[i].title %></h6>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                <%- trendingPost[i].value[0] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frames">
+                <div class="title-list-post">
+                    <h6>Các server game ngọc rồng lậu</h6>
+                    <a href="/game">Xem tất cả></a>
+                </div>
+                <div class="list-post">
+                    <div class="wrapper">
+                        
+                        <% for(let i=0;i<gamePost.length;i++) { %>
+
+                            <a href="/post/<%- gamePost[i].title.split(' ').join('-') %>.<%- gamePost[i]._id %>">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="<%- gamePost[i].background %>" alt="" />
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">
+                                            <h6><%- gamePost[i].title %></h6>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                <%- gamePost[i].value[0] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="frames">
+                <div class="title-list-post">
+                    <h6>Bài viết mới nhất</h6>
+                    <a href="/bai-viet-moi">Xem tất cả></a>
+                </div>
+                <div class="list-post">
+                    <div class="wrapper">
+                        <% for(let i=0;i<newPost.length;i++) { %>
+
+                            <a href="/post/<%- newPost[i].title.split(' ').join('-') %>.<%- newPost[i]._id %>">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="<%- newPost[i].background %>" alt="" />
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">
+                                            <h6><%- newPost[i].title %></h6>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                <%- newPost[i].value[0] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frames">
+                <div class="title-list-post">
+                    <h6>Kiếm tiền online</h6>
+                    <a href="/kiem-tien-online">Xem tất cả></a>
+                </div>
+                <div class="list-post">
+                    <div class="wrapper">
+                        <% for(let i=0;i<monneyPost.length;i++) { %>
+
+                            <a href="/post/<%- monneyPost[i].title.split(' ').join('-') %>.<%- monneyPost[i]._id %>">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="<%- monneyPost[i].background %>" alt="" />
+                                    </div>
+                                    <div class="content">
+                                        <div class="title">
+                                            <h6><%- monneyPost[i].title %></h6>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                <%- monneyPost[i].value[0] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="/js/homeScript.js"></script>
+    </body>
+</html>

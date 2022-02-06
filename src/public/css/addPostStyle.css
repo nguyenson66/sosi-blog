@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-color: #d0d0d0;
+}
+
+.title {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: green;
+}
+
+.post {
+    background-color: #fff;
+}
+
+.title-avatar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.title-avatar textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+.title-avatar input {
+    width: 100%;
+}
+
+.title-avatar h6 {
+    margin-top: 10px;
+}
+
+.segment {
+    padding: 10px;
+    border-bottom: solid 1px goldenrod;
+}
+
+.type h6 {
+    display: inline;
+    margin-right: 20px;
+}
+
+.value {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.value textarea {
+    padding: 5px;
+    width: 100%;
+}
+
+.links {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.link {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.link input {
+    width: 30%;
+}
+
+.tag {
+    margin: 10px 20px;
+}
+
+.tag textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+.option {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.col-4 {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.col-4 button {
+    width: 100%;
+}
