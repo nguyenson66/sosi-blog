@@ -16,21 +16,39 @@
 
 /* ///////  main     /////// */
 
-main {
-    background-color: rgb(232, 232, 232);
+.main {
     height: 150vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ads {
+    width: 50%;
+}
+
+.view-shorten {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .get-link {
+    height: 100%;
+    width: max-content;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+}
+
+.ads-2 {
+    height: 200px;
+    width: auto;
 }
 
 .get-link input {
-    margin-bottom: 20%;
     padding: 10px 20px;
 }
 
