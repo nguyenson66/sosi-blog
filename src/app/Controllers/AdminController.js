@@ -82,7 +82,7 @@ exports.AddPost_POST = async (req,res) => {
 
         const newLink = await shorten.save()
         
-        valueLink[i] = 'http://sositech.xyz/shorten/' + newLink._id
+        valueLink[i] = newLink._id
     }
 
     const post = new Post({
