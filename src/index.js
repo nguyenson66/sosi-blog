@@ -30,4 +30,4 @@ db.connectDB()
 routes(app)
 
 
-server.listen(3000, () => console.log('server is running'))
+server.listen(80, () => console.log('server is running'))
