@@ -38,7 +38,7 @@
             <div class="frames">
                 <div class="title-list-post">
                     <h6>Bài viết thịnh hành</h6>
-                    <a href="/thinh-hanh">Xem tất cả></a>
+                    <!-- <a href="/thinh-hanh">Xem tất cả></a> -->
                 </div>
                 <div class="list-post">
                     <div class="wrapper">
@@ -70,25 +70,25 @@
             <div class="frames">
                 <div class="title-list-post">
                     <h6>Các server game ngọc rồng lậu</h6>
-                    <a href="/game">Xem tất cả></a>
+                    <a href="/ngoc-rong-online-lau">Xem tất cả></a>
                 </div>
                 <div class="list-post">
                     <div class="wrapper">
                         
-                        <% for(let i=0;i<gamePost.length;i++) { %>
+                        <% for(let i=0;i<nroPost.length;i++) { %>
 
-                            <a href="/post/<%- gamePost[i].title.split(' ').join('-') %>.<%- gamePost[i]._id %>">
+                            <a href="/post/<%- nroPost[i].title.split(' ').join('-') %>.<%- nroPost[i]._id %>">
                                 <div class="box">
                                     <div class="image">
-                                        <img src="<%- gamePost[i].background %>" alt="" />
+                                        <img src="<%- nroPost[i].background %>" alt="" />
                                     </div>
                                     <div class="content">
                                         <div class="title">
-                                            <h6><%- gamePost[i].title %></h6>
+                                            <h6><%- nroPost[i].title %></h6>
                                         </div>
                                         <div class="description">
                                             <p>
-                                                <%- gamePost[i].value[0] %>
+                                                <%- nroPost[i].value[0] %>
                                             </p>
                                         </div>
                                     </div>
@@ -103,25 +103,26 @@
 
             <div class="frames">
                 <div class="title-list-post">
-                    <h6>Bài viết mới nhất</h6>
-                    <a href="/bai-viet-moi">Xem tất cả></a>
+                    <h6>Các server game ninja school online lậu</h6>
+                    <a href="/ninja-school-online-lau">Xem tất cả></a>
                 </div>
                 <div class="list-post">
                     <div class="wrapper">
-                        <% for(let i=0;i<newPost.length;i++) { %>
+                        
+                        <% for(let i=0;i<nsoPost.length;i++) { %>
 
-                            <a href="/post/<%- newPost[i].title.split(' ').join('-') %>.<%- newPost[i]._id %>">
+                            <a href="/post/<%- nsoPost[i].title.split(' ').join('-') %>.<%- nsoPost[i]._id %>">
                                 <div class="box">
                                     <div class="image">
-                                        <img src="<%- newPost[i].background %>" alt="" />
+                                        <img src="<%- nsoPost[i].background %>" alt="" />
                                     </div>
                                     <div class="content">
                                         <div class="title">
-                                            <h6><%- newPost[i].title %></h6>
+                                            <h6><%- nsoPost[i].title %></h6>
                                         </div>
                                         <div class="description">
                                             <p>
-                                                <%- newPost[i].value[0] %>
+                                                <%- nsoPost[i].value[0] %>
                                             </p>
                                         </div>
                                     </div>
@@ -129,6 +130,7 @@
                             </a>
 
                         <% } %>
+
                     </div>
                 </div>
             </div>

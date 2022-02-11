@@ -23,16 +23,16 @@ exports.home = async (req,res) => {
 
     try {
         const trendingPost = await Post.find({}).select('_id background title value').sort({views : 'desc'}).limit(10)
-        const gamePost = await Post.find({category : 'game'}).select('_id background title value').sort({views : 'desc'}).limit(10)
-        const newPost = await Post.find({}).select('_id background title value').sort({created_at : 'asc'}).limit(10)
+        const nroPost = await Post.find({category : 'ngoc rong online lau'}).select('_id background title value').sort({views : 'desc'}).limit(10)
+        const nsoPost = await Post.find({category : 'ninja school online lau'}).select('_id background title value').sort({views : 'desc'}).limit(10)
         const monneyPost = await Post.find({category : 'kiem tien online'}).select('_id background title value').sort({views : 'desc'}).limit(10)
         
         // res.json([trendingPost, gamePost, newPost, monneyPost])
 
         res.render('home',{
             trendingPost,
-            gamePost,
-            newPost,
+            nroPost,
+            nsoPost,
             monneyPost
         })
     } catch (error) {
@@ -47,6 +47,7 @@ exports.shorten = async (req,res) => {
 
 //[GET] /:category?order=&by=
 exports.category = async (req,res) => {
+    const list_category = ['ngoc rong online lau','ninja school online lau','thu thuat','ung dung','game','kiem tien online']
     let order = 'asc'
     let by = 'title'
     let posts = []
@@ -54,27 +55,33 @@ exports.category = async (req,res) => {
 
     category = category.join(' ')
 
-    if(req.query.order !== undefined) 
-        order = req.query.order
+    if(list_category.includes(category)){
+        
+        if(req.query.order !== undefined) 
+            order = req.query.order
+        
+        if(req.query.by !== undefined)
+            by = req.query.by
     
-    if(req.query.by !== undefined)
-        by = req.query.by
-
-    if(by == 'views'){
-        posts = await Post.find({category}).select('_id background title value').sort({views : order})
-    }
-    else if(by == 'title'){
-        posts = await Post.find({category}).select('_id background title value').sort({title : order})
+        if(by == 'views'){
+            posts = await Post.find({category}).select('_id background title value').sort({views : order})
+        }
+        else if(by == 'title'){
+            posts = await Post.find({category}).select('_id background title value').sort({title : order})
+        }
+        else {
+            posts = await Post.find({category}).select('_id background title value').sort({created_at : order})
+        }
+    
+        // res.json(posts)
+        res.render('listPost', {
+            title : category.toUpperCase(),
+            posts
+        })
     }
     else {
-        posts = await Post.find({category}).select('_id background title value').sort({created_at : order})
+        res.status(404).json('404 not found')
     }
-
-    // res.json(posts)
-    res.render('listPost', {
-        title : category.toUpperCase(),
-        posts
-    })
 }
 
 //[GET] /post/:id
