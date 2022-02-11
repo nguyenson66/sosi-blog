@@ -26,8 +26,14 @@ socket(io)
 db.connectDB()
 
 
+//sitemap web
+app.get('/sitemap.xml', (req,res) => {
+    res.sendFile(path.join(__dirname+'/sitemap.xml'))
+})
+
 /// all routes project
 routes(app)
+
 
 
 server.listen(80, () => console.log('server is running'))
